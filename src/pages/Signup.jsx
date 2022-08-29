@@ -1,7 +1,7 @@
 
 import React from "react";
 import { useState } from "react";
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { UserAuth} from '../context/AuthContext';
 
 
@@ -10,18 +10,10 @@ const Signup = () => {
     const [email, setEmail]=useState('')
     const [password, setPassword]=useState('')
     const {user,signUp}= UserAuth()
+    const [error,setError]=useState('')
+    const navigate=useNavigate()
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        try {
-            signUp( email, password);
-          console.log(email)
-        
-        } 
-        catch (error) {
-          console.log(error);
-        }
-      };
+ 
 
 
   return (
@@ -37,7 +29,11 @@ const Signup = () => {
           <div className="max-w-[450px] h-[600px] mx-auto bg-black/75 text-white ">
             <div className="max-w-[320px] mx-auto py-16">
               <h1 className="text-3xl font-bold">Sign Up</h1>
-              <form onSubmit={signUp(email,password)} className="w-full flex flex-col py-4">
+              {error ?  <p className="p-3 bg-red-400 my-2">{error}</p> : null }
+              <form onSubmit={ (e)=>{
+                e.preventDefault()
+                if(password.length < 6){setError(error.message)} else{  signUp(email,password);navigate('/')}
+                  }} className="w-full flex flex-col py-4 john">
                 <input
                 onChange={(e)=>setEmail(e.target.value)}
                   className="p-3 my-2 bg-gray-600 rounded"
