@@ -29,11 +29,15 @@ const Signup = () => {
           <div className="max-w-[450px] h-[600px] mx-auto bg-black/75 text-white ">
             <div className="max-w-[320px] mx-auto py-16">
               <h1 className="text-3xl font-bold">Sign Up</h1>
-              {error ?  <p className="p-3 bg-red-400 my-2">{error}</p> : null }
-              <form onSubmit={ (e)=>{
-                e.preventDefault()
-                if(password.length < 6){setError(error.message)} else{  signUp(email,password);navigate('/')}
-                  }} className="w-full flex flex-col py-4 john">
+              {error ?  <p className="p-3 bg-red-500 my-2">{error}</p> : null }
+              <form onSubmit={(e) => {
+                  e.preventDefault();
+                  if (password.length < 6) {
+                    setError("Password is too short!!");
+                  } else {
+                    signUp(email, password);
+                    navigate('/')
+                  }}} className="w-full flex flex-col py-4 john">
                 <input
                 onChange={(e)=>setEmail(e.target.value)}
                   className="p-3 my-2 bg-gray-600 rounded"
@@ -48,7 +52,7 @@ const Signup = () => {
                   placeholder="Password"
                   autoComplete="current-password"
                 />
-                <button className="bg-red-600 py-3 my-6 rounded font-bold">
+                <button className="bg-green-600 py-3 my-6 rounded font-bold hover:bg-green-800 duration-500">
                   Sign Up
                 </button>
                 <div className="flex justify-between items-center text-sm text-gray-600">

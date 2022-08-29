@@ -42,19 +42,19 @@ const SavedShows = () => {
 
   return (
     <div>
-      <h2 className="text-white font-bold md:text-xl p-4 ">Shows</h2>
+      <h2 className="text-white font-bold md:text-xl p-4 md:p-8 ">Shows</h2>
       <div className="relative flex items-center group ">
         <MdChevronLeft
           onClick={slideLeft}
-          className="bg-white left-0 rounded-full absolute opacity-50 hover:opacity-100 cursor-pointer z-10 hidden group-hover:block hover:duration-500"
-          size={35}
+          className="bg-green-600 left-0 rounded-full absolute opacity-50 hover:opacity-100 cursor-pointer z-10 hidden group-hover:block hover:duration-500"
+          size={30}
         />
         <div
           id={"slider" }
-          className="w-full h-full overflow-x-scroll whitespace-nowrap scroll-smooth scrollbar-hide relative"
+          className="w-full h-full overflow-x-scroll whitespace-nowrap scroll-smooth scrollbar-hide relative md:pl-5 "
         >
           {movies.map((item, id) => (
-             <div key={id} className="w-[160px] sm:w-[200px] md:w-[240px] lg:w-[280px] inline-block cursor-pointer relative p-3  ">
+             <div key={id} className="w-[160px] sm:w-[200px] md:w-[240px] lg:w-[280px] inline-block cursor-pointer relative p-3  hover:scale-105 duration-500">
              <img
                className="w-full h-auto block rounded-sm"
                src={`https://image.tmdb.org/t/p/w500/${item?.img}`}
@@ -71,8 +71,8 @@ const SavedShows = () => {
         </div>
         <MdChevronRight
           onClick={slideRight}
-          className="bg-white right-0 rounded-full absolute opacity-50 hover:opacity-100 cursor-pointer z-10 hidden group-hover:block  hover:duration-500"
-          size={35}
+          className="bg-green-600 right-0 rounded-full absolute opacity-50 hover:opacity-100 cursor-pointer z-10 hidden group-hover:block  hover:duration-500"
+          size={30}
         />
       </div>
     </div>

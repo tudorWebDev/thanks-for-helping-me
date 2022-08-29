@@ -24,12 +24,12 @@ const Row = ({ title, fetchUrl, rowId }) => {
 
   return (
     <>
-      <h2 className="text-white font-bold md:text-xl p-4 ">{title}</h2>
+      <h2 className="text-green-600 font-bold md:text-xl p-4 md:p-8 ">{title}</h2>
       <div className="relative flex items-center group ">
         <MdChevronLeft
           onClick={slideLeft}
-          className="bg-white left-0 rounded-full absolute opacity-50 hover:opacity-100 cursor-pointer z-10 hidden group-hover:block hover:duration-500"
-          size={35}
+          className="bg-green-600 left-0 rounded-full absolute opacity-50 hover:opacity-100 cursor-pointer z-10 hidden group-hover:block hover:duration-500"
+          size={30}
         />
         <div
           id={"slider"+rowId}
@@ -41,8 +41,8 @@ const Row = ({ title, fetchUrl, rowId }) => {
         </div>
         <MdChevronRight
           onClick={slideRight}
-          className="bg-white right-0 rounded-full absolute opacity-50 hover:opacity-100 cursor-pointer z-10 hidden group-hover:block  hover:duration-500"
-          size={35}
+          className="bg-green-600 right-0 rounded-full absolute opacity-50 hover:opacity-100 cursor-pointer z-10 hidden group-hover:block  hover:duration-500"
+          size={30}
         />
       </div>
     </>

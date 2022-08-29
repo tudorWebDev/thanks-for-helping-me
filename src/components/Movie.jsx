@@ -33,18 +33,18 @@ const Movie = ({item}) => {
   
 
   return (
-    <div className="w-[160px] sm:w-[200px] md:w-[240px] lg:w-[280px] inline-block cursor-pointer relative p-3  ">
+    <div className="w-[160px] sm:w-[200px] md:w-[240px] lg:w-[280px] inline-block cursor-pointer relative p-3  hover:scale-[1.05] duration-500 ">
     <img
       className="w-full h-auto block rounded-sm"
       src={`https://image.tmdb.org/t/p/w500/${item?.backdrop_path}`}
       alt={item?.title}
     />
     <div className="absolute top-0 left-0 w-full h-full  hover:bg-black/60 text-white  opacity-0  hover:opacity-[0.75] hover:duration-500  ">
-      <p className="white-space-normal text-xs md:text-sm font-bold flex justify-center items-center h-full text-center mx-5 ">
+      <p className="white-space-normal text-[8px] md:text-sm font-bold flex justify-center items-center h-full text-center mx-5 ">
         {item?.title}
       </p>
-      <p onClick={saveShow}>
-        {like ? <FaHeart  className="absolute top-6 left-6 text-grey-300"/> : <FaRegHeart className="absolute top-6 left-6 text-grey-300"/>}
+      <p className='text-sm md:text-base' onClick ={saveShow}>
+        {like ? <FaHeart  className="  absolute md:top-5 md:left-5 top-4 left-4 text-red-600 duration-500" /> : <FaRegHeart className="absolute md:top-5 md:left-5 top-4 left-4 text-grey-400 hover:text-red-400 duration-500"/>}
       </p>
     </div>
   </div>

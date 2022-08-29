@@ -4,7 +4,7 @@ import SavedShows from '../components/SavedShows'
 const Account = () => {
   return (
     <>
-    <div className="w-full text-white">
+    <div className="w-full text-white/80">
     <img
           className=" w-full h-[400px] object-cover"
           src="https://assets.nflxext.com/ffe/siteui/vlv3/ac824598-245b-4828-b14f-5cff9074f4d0/02b6f19c-08c7-4dea-af0a-2206b4b1650a/RO-en-20220822-popsignuptwoweeks-perspective_alpha_website_small.jpg"
